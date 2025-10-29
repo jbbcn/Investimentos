@@ -1,0 +1,202 @@
+💻 O Código Completo do Site (HTML + CSS)
+Com base em tudo o que você pediu (tema, cores, nome e o artigo), aqui está um código HTML completo para a página inicial do seu site. Ele já inclui:
+
+O esquema de cores Preto e Amarelo.
+
+O nome "Bosco" no título.
+
+O artigo educacional completo.
+
+A interação da imagem (na seção "Sobre Mim").
+
+A Interação da Imagem
+Notei que você ajustou seu pedido para "passar o mouse por cima da página". Um efeito que reage ao movimento do mouse em qualquer lugar da página costuma ser muito distrativo e, às vezes, irritante para o leitor.
+
+O que funciona muito melhor (e acredito que seja o que você procura) é o efeito onde a imagem reage quando o mouse passa especificamente sobre ela. Incluí esse código na seção "Sobre Mim" abaixo.
+
+Instruções
+Copie todo o código abaixo.
+
+Cole em um editor de texto (como o Bloco de Notas).
+
+Salve o arquivo com o nome index.html.
+
+Abra esse arquivo no seu navegador para ver o resultado!
+
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças com Bosco - Página Inicial</title>
+    
+    <style>
+        /* CONFIGURAÇÕES GERAIS */
+        body {
+            background-color: #1a1a1a; /* Fundo preto (cinza-escuro) */
+            color: #f4f4f4; /* Texto branco (cinza-claro) */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background-color: #000;
+            padding: 20px 30px;
+            text-align: center;
+            border-bottom: 4px solid #FFD700; /* Linha amarela/dourada */
+        }
+
+        header h1 {
+            color: #FFD700; /* Título amarelo */
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+        .container-principal {
+            padding: 20px 30px;
+            max-width: 900px;
+            margin: 20px auto; /* Centraliza o conteúdo */
+        }
+
+        /* Títulos */
+        h2 {
+            color: #FFD700;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #f4f4f4;
+            font-size: 1.4em;
+        }
+
+        /* Links e Botões */
+        a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- SEÇÃO "SOBRE MIM" E EFEITO DE IMAGEM --- */
+        .secao-sobre {
+            display: flex;
+            align-items: center;
+            background-color: #252525;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .container-imagem-bosco {
+            width: 150px; /* Tamanho da imagem */
+            height: 150px;
+            border-radius: 50%; /* Imagem redonda */
+            border: 4px solid #FFD700; /* Borda amarela */
+            overflow: hidden; /* Esconde o "zoom" que vazar */
+            margin-right: 25px;
+            flex-shrink: 0; /* Impede que a imagem encolha */
+        }
+
+        .imagem-com-efeito {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease-out; /* Animação suave */
+        }
+
+        /* A INTERAÇÃO QUE VOCÊ PEDIU */
+        .imagem-com-efeito:hover {
+            transform: scale(1.15); /* Zoom de 15% */
+            cursor: pointer;
+        }
+
+        .secao-sobre p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        /* ESTILO DO ARTIGO */
+        .artigo-bloco {
+            background-color: #222;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #FFD700;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Finanças com Bosco</h1>
+    </header>
+
+    <div class="container-principal">
+
+        <h2>Sobre Mim</h2>
+        <div class="secao-sobre">
+            
+            <div class="container-imagem-bosco">
+                <img src="https://via.placeholder.com/150" alt="Foto de Bosco" class="imagem-com-efeito">
+            </div>
+            
+            <div>
+                <p>Olá! Eu sou o Bosco. Bem-vindo ao meu espaço sobre finanças e investimentos. Meu objetivo é descomplicar o mercado financeiro e ajudar você a tomar decisões mais inteligentes com seu dinheiro.</p>
+                <p style="margin-top: 10px;"><i>(Passe o mouse sobre a minha foto para ver o efeito!)</i></p>
+            </div>
+        </div>
+
+
+        <h2>Artigo: Panorama dos Investimentos no Brasil</h2>
+        
+        <p>Decidir onde investir pode ser intimidador com tantas opções disponíveis. O "melhor" investimento não existe; o que existe é o mais adequado para **seus objetivos**, **seu prazo** e seu **perfil de risco** (Conservador, Moderado ou Arrojado). Abaixo, exploramos as principais categorias de investimentos no Brasil.</p>
+
+        <div class="artigo-bloco">
+            <h3>1. Renda Fixa: A Porta de Entrada</h3>
+            <p>São investimentos com regras de rendimento definidas no momento da aplicação. São considerados mais seguros e previsíveis, ideais para perfis conservadores ou para a reserva de emergência.</p>
+            <ul>
+                <li><strong>Tesouro Direto:</strong> Títulos públicos do governo federal. É o investimento considerado mais seguro do país. Existem tipos diferentes: Tesouro Selic (pós-fixado, segue a taxa básica de juros), Tesouro IPCA+ (protege da inflação) e Tesouro Prefixado (taxa fixa).</li>
+                <li><strong>CDB (Certificado de Depósito Bancário):</strong> Você "empresta" dinheiro para bancos. Possui a garantia do FGC (Fundo Garantidor de Créditos) para valores de até R$ 250 mil por CPF e por instituição.</li>
+                <li><strong>LCI e LCA (Letras de Crédito Imobiliário e do Agronegócio):</strong> Semelhantes ao CDB, mas o dinheiro é usado para financiar os setores imobiliário ou agrícola. Sua grande vantagem: são **isentas de Imposto de Renda** para pessoa física.</li>
+            </ul>
+        </div>
+
+        <div class="artigo-bloco">
+            <h3>2. Renda Variável: Buscando Maior Rentabilidade</h3>
+            <p>Aqui, não é possível saber exatamente qual será o rendimento no momento da aplicação. O potencial de ganho é maior, mas os riscos também. É indicado para objetivos de longo prazo e perfis moderados a arrojados.</p>
+            <ul>
+                <li><strong>Ações:</strong> A forma mais conhecida. Você compra pequenas partes de empresas listadas na Bolsa de Valores (B3). Você pode ganhar com a valorização da ação ou com o recebimento de dividendos (distribuição de lucros).</li>
+                <li><strong>FIIs (Fundos de Investimento Imobiliário):</strong> Fundos que investem em imóveis (shoppings, escritórios, galpões). Ao comprar uma cota, você recebe "aluguéis" mensais, que geralmente são isentos de Imposto de Renda.</li>
+                <li><strong>ETFs (Exchange Traded Funds):</strong> Fundos que replicam um índice da bolsa (como o Ibovespa). É uma forma barata e fácil de diversificar, pois com uma única cota você investe em dezenas de empresas de uma vez.</li>
+            </ul>
+        </div>
+
+        <div class="artigo-bloco">
+            <h3>3. Fundos de Investimento</h3>
+            <p>São "condomínios" de investidores. Várias pessoas juntam seu dinheiro e um gestor profissional decide onde investir (seja em Renda Fixa, Ações, ou uma mistura de ambos). É uma forma de terceirizar a gestão do seu dinheiro, mas é preciso pagar taxas de administração.</p>
+        </div>
+
+        <h3>Conclusão: Por Onde Começar?</h3>
+        <p>Antes de tudo, defina seus objetivos (comprar um carro, aposentadoria, reserva de emergência) e entenda sua tolerância a perdas. Para a maioria das pessoas, o caminho é:</p>
+        <ol>
+            <li>Montar uma <strong>Reserva de Emergência</strong> (em Tesouro Selic ou CDB de liquidez diária).</li>
+            <li>Estudar e começar a <strong>diversificar</strong> (misturar Renda Fixa com Renda Variável) de acordo com seus objetivos de longo prazo.</li>
+        </ol>
+        
+        <p><strong>Lembre-se:</strong> Este artigo é educacional. Procure sempre estudar e, se necessário, consulte um profissional certificado para avaliar seu caso específico.</p>
+
+    </div>
+
+</body>
+</html>
